@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c5a7dea62e18f8859152387a44e146ff7c68f94e627b4e5721452649412a65da
+  sha256: 9b9e2a1da89044cf4daf8c9e03b95b6ceb9139f82c037cfb607e607243534b75
 
 build:
   number: 0
-  skip: True  # [py<35]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: true  # [py<35]
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -30,13 +30,13 @@ requirements:
 test:
   imports:
     - pyreadr
-   
+
 about:
   home: https://github.com/ofajardo/pyreadr
   license: AGPL
   license_family: AGPL
   license_file: LICENSE.txt
-  summary: 'read R RData and Rds files into pandas data frames'
+  summary: read R RData and Rds files into pandas data frames
   description: |
     Python package to read and write R RData and Rds files into/from pandas dataframes. No R or other external dependencies required.
   doc_url: https://github.com/ofajardo/pyreadr
