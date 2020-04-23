@@ -3,7 +3,7 @@ About pyreadr
 
 Home: https://github.com/ofajardo/pyreadr
 
-Package license: AGPL
+Package license: AGPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
