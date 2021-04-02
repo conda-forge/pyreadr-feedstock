@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 69fd054140f23700b4ea03f53654531dcdb0fbef440b93d833bc1db0c474df59
+  sha256: 44602697fb853b89dcb280482fdebbf98f46f11cf265eb77b853b51fe7a499cb
 
 build:
   number: 0
