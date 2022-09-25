@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.2.8" %}
+{% set version = "0.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,18 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1d7399eab92cf321bb69ab2999dee61dffda165f5fdf6ea01a3391231cfcbe60
+  sha256: 681bc7500628725a483b6d535918e779e606d8a43f3a9ed09a9eb117e02a0f03
 
 build:
-  number: 4
+  number: 0
   skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - {{ compiler("m2w64_c") }}  # [win]
     - {{ compiler('c') }}  # [not win]
   host:
