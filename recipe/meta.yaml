@@ -10,7 +10,7 @@ source:
   sha256: 901110d62b4bedaef288f4db81425fb696edc721fe2c34c1083f5fb11050a73c
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -34,7 +34,6 @@ requirements:
     - pandas
     - m2w64-gcc-libs  # [win]
     - bzip2  # [not win]
-    - zlib
 
 test:
   imports:
