@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7fb9f8c4afb5aac1e5bf8175bf295bc4f421eb33ba7c093f455d077f91fe73c0
+  sha256: cc3b9d27d6a9aa8984ea973544fd922caea237067620dd68147163b6746590b6
 
 build:
   number: 0
@@ -21,7 +21,9 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - {{ compiler("m2w64_c") }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
     - {{ compiler('c') }}  # [not win]
+    - {{ stdlib("c") }}    # [not win]
   host:
     - python
     - pip
