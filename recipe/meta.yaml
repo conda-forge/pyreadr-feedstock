@@ -28,6 +28,7 @@ requirements:
     - python
     - pip
     - cython
+    - setuptools
     - m2w64-toolchain  # [win]
     - libpython  # [win]
     - bzip2  # [not win]
