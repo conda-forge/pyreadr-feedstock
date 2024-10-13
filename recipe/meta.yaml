@@ -10,7 +10,7 @@ source:
   sha256: 33d5747fe210d41e4a329afef2232c9d1258847094b87a2a96efffbef223fae8
 
 build:
-  number: 0
+  number: 1
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py<35]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -29,7 +29,7 @@ requirements:
     - pip
     - cython
     - setuptools
-    - m2w64-toolchain  # [win]
+    - {{ compiler('m2w64_c') }}  # [win]
     - libpython  # [win]
     - bzip2  # [not win]
     - zlib
