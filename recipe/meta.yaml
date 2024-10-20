@@ -29,14 +29,12 @@ requirements:
     - pip
     - cython
     - setuptools
-    - {{ compiler('m2w64_c') }}  # [win]
     - libpython  # [win]
     - bzip2  # [not win]
     - zlib
   run:
     - python
     - pandas
-    - m2w64-gcc-libs  # [win]
     - bzip2  # [not win]
 
 test:
