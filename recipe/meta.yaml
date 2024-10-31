@@ -14,8 +14,8 @@ build:
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py<35]
   script: 
-   - set LDFLAGS="%LDFLAGS% -L%PREFIX%\Library\lib"  # [win]
-   - {{ PYTHON }} -m pip install . --no-deps -vv
+    - set LDFLAGS="%LDFLAGS% -L%PREFIX%\Library\lib"  # [win]
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
