@@ -30,12 +30,12 @@ requirements:
     - cython
     - setuptools
     - libpython  # [win]
-    - bzip2  # [not win]
+    - bzip2  
     - zlib
   run:
     - python
     - pandas
-    - bzip2  # [not win]
+    - bzip2  
 
 test:
   imports:
