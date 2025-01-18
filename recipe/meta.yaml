@@ -14,6 +14,7 @@ build:
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py<35]
   script: 
+    - echo "%DISTUTILS_USE_SDK% - %LIB%"   # [win]
     - set LDFLAGS="%LDFLAGS% -L%PREFIX%\Library\lib"  # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
 
