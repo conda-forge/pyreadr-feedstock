@@ -26,6 +26,7 @@ requirements:
     - {{ stdlib("m2w64_c") }}    # [win]
     - {{ compiler('c') }}  # [not win]
     - {{ stdlib("c") }}    # [not win]
+    - conda-gcc-specs   # [win]
   host:
     - python
     - pip
