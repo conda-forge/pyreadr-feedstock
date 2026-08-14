@@ -29,7 +29,7 @@ requirements:
     - pip
     - cython
     - setuptools
-    - libpython  # [win]
+    - distutils-activate-mingw  # [win]
     - bzip2
     - zlib
     - liblzma-devel
