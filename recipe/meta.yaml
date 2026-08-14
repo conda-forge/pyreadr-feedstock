@@ -10,9 +10,7 @@ source:
   sha256: ec10bef1798a4d9e91ff75ab69fbcd009a3fad2250c79f5377e19e787c949b8f
 
 build:
-  number: 0
-  skip: true  # [python_impl == 'pypy']
-  skip: true  # [py<35]
+  number: 1
   script:
     - set DISTUTILS_USE_SDK=1    # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
@@ -22,17 +20,16 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - {{ compiler("m2w64_c") }}  # [win]
-    - {{ stdlib("m2w64_c") }}    # [win]
-    - {{ compiler('c') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
+    # uses m2w64 toolchain on windows, see conda_build_config.yaml
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
     - conda-gcc-specs   # [win]
   host:
     - python
     - pip
     - cython
     - setuptools
-    - libpython  # [win]
+    - distutils-activate-mingw  # [win]
     - bzip2
     - zlib
     - liblzma-devel
