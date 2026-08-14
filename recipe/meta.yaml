@@ -10,7 +10,7 @@ source:
   sha256: ec10bef1798a4d9e91ff75ab69fbcd009a3fad2250c79f5377e19e787c949b8f
 
 build:
-  number: 0
+  number: 1
   script:
     - set DISTUTILS_USE_SDK=1    # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
