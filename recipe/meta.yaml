@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ec10bef1798a4d9e91ff75ab69fbcd009a3fad2250c79f5377e19e787c949b8f
 
 build:
-  number: 1
+  number: 2
   script:
     - set DISTUTILS_USE_SDK=1    # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
