@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ec10bef1798a4d9e91ff75ab69fbcd009a3fad2250c79f5377e19e787c949b8f
+  sha256: 3243f0f7107c47a193508f79f39f22310f66352f5f5ee18bb0208ceebfd84fb6
 
 build:
-  number: 2
+  number: 0
   script:
     - set DISTUTILS_USE_SDK=1    # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
@@ -35,20 +35,22 @@ requirements:
     - liblzma-devel
   run:
     - python
-    - pandas
+    - narwhals >=2.10.1
 
 test:
   imports:
     - pyreadr
+  requires:
+    - pandas
 
 about:
   home: https://github.com/ofajardo/pyreadr
   license: AGPL-3.0-or-later
   license_family: AGPL
   license_file: LICENSE.txt
-  summary: read R RData and Rds files into pandas data frames
+  summary: read and write R RData and Rds files into pandas or polars data frames
   description: |
-    Python package to read and write R RData and Rds files into/from pandas dataframes. No R or other external dependencies required.
+    Python package to read and write R RData and Rds files into/from pandas or polars dataframes. No R or other external dependencies required.
   doc_url: https://github.com/ofajardo/pyreadr
   dev_url: https://github.com/ofajardo/pyreadr
 
