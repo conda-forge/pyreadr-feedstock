@@ -1,5 +1,5 @@
 {% set name = "pyreadr" %}
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ec10bef1798a4d9e91ff75ab69fbcd009a3fad2250c79f5377e19e787c949b8f
+  sha256: 3243f0f7107c47a193508f79f39f22310f66352f5f5ee18bb0208ceebfd84fb6
 
 build:
-  number: 2
+  number: 0
   script:
     - set DISTUTILS_USE_SDK=1    # [win]
     - {{ PYTHON }} -m pip install . --no-deps -vv
