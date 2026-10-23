@@ -43,15 +43,14 @@ requirements:
     - narwhals >=2.10.1
 
 tests:
-  - python:
-      imports:
-        - pyreadr
-      pip_check: true
+  # pyreadr requires pandas or polars at import time
   - requirements:
       run:
         - pandas
+        - pip
     script:
-      - python -c "import pyreadr, pandas"
+      - python -c "import pyreadr"
+      - pip check
 
 about:
   homepage: https://github.com/ofajardo/pyreadr
