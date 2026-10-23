@@ -1,0 +1,68 @@
+context:
+  version: "0.5.7"
+
+package:
+  name: pyreadr
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/p/pyreadr/pyreadr-${{ version }}.tar.gz
+  sha256: 3243f0f7107c47a193508f79f39f22310f66352f5f5ee18bb0208ceebfd84fb6
+
+build:
+  number: 1
+  script:
+    - if: win
+      then: set DISTUTILS_USE_SDK=1
+    - ${{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython
+    # uses m2w64 toolchain on windows, see conda_build_config.yaml
+    - ${{ stdlib("c") }}
+    - ${{ compiler("c") }}
+    - if: win
+      then: conda-gcc-specs
+  host:
+    - python
+    - pip
+    - cython
+    - setuptools
+    - if: win
+      then: distutils-activate-mingw
+    - bzip2
+    - zlib
+    - liblzma-devel
+  run:
+    - python
+    - narwhals >=2.10.1
+
+tests:
+  - python:
+      imports:
+        - pyreadr
+      pip_check: true
+  - requirements:
+      run:
+        - pandas
+    script:
+      - python -c "import pyreadr, pandas"
+
+about:
+  homepage: https://github.com/ofajardo/pyreadr
+  license: AGPL-3.0-or-later
+  license_file: LICENSE.txt
+  summary: read and write R RData and Rds files into pandas or polars data frames
+  description: |
+    Python package to read and write R RData and Rds files into/from pandas or polars dataframes. No R or other external dependencies required.
+  documentation: https://github.com/ofajardo/pyreadr
+  repository: https://github.com/ofajardo/pyreadr
+
+extra:
+  recipe-maintainers:
+    - ofajardo
