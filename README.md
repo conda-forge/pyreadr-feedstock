@@ -7,14 +7,13 @@ Home: https://github.com/ofajardo/pyreadr
 
 Package license: AGPL-3.0-or-later
 
-Summary: read R RData and Rds files into pandas data frames
+Summary: read and write R RData and Rds files into pandas or polars data frames
 
 Development: https://github.com/ofajardo/pyreadr
 
 Documentation: https://github.com/ofajardo/pyreadr
 
-Python package to read and write R RData and Rds files into/from pandas dataframes. No R or other external dependencies required.
-
+Python package to read and write R RData and Rds files into/from pandas or polars dataframes. No R or other external dependencies required.
 
 Current build status
 ====================
