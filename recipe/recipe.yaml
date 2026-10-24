@@ -1,5 +1,5 @@
 context:
-  version: "0.5.7"
+  version: "0.5.8"
 
 package:
   name: pyreadr
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pyreadr/pyreadr-${{ version }}.tar.gz
-  sha256: 3243f0f7107c47a193508f79f39f22310f66352f5f5ee18bb0208ceebfd84fb6
+  sha256: 07b5fa220283332775e9bcca7444222815bfc2dc0d6e762179553298ff50d73e
 
 build:
-  number: 1
+  number: 0
   script:
     - if: win
       then: set DISTUTILS_USE_SDK=1
