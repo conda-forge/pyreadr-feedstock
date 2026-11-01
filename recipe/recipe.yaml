@@ -1,5 +1,5 @@
 context:
-  version: "0.5.8"
+  version: "0.5.9"
 
 package:
   name: pyreadr
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pyreadr/pyreadr-${{ version }}.tar.gz
-  sha256: 07b5fa220283332775e9bcca7444222815bfc2dc0d6e762179553298ff50d73e
+  sha256: 7bb579718558b9ca806bec8d1bd67f91003eaaf87e70475bfa5c2347e2a0abda
 
 build:
   number: 0
